@@ -1026,3 +1026,81 @@ img {
     height: auto;
     display: block;
 }
+/* ==================== تنسيقات الموبايل فقط (لا تؤثر على اللابتوب) ==================== */
+@media (max-width: 768px) {
+    /* 1. ضبط الهيدر والقائمة فوق */
+    .logo {
+        padding: 12px 15px;
+        flex-direction: column;
+        gap: 12px;
+        position: relative;
+    }
+    .title {
+        position: static;
+        transform: none;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .name {
+        font-size: 28px;
+    }
+
+    /* 2. ضبط السكشن الرئيسي (الهيرو) */
+    .logo-title {
+        flex-direction: column-reverse !important;
+        padding-top: 140px;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-align: center;
+        min-height: auto;
+    }
+    .text-content {
+        max-width: 100% !important;
+        top: 0;
+        margin-top: 20px;
+    }
+    .km {
+        font-size: 30px;
+    }
+    .mk {
+        font-size: 20px;
+    }
+    .text-content-h3 {
+        font-size: 20px;
+    }
+    .image-showcase-frame {
+        width: 100%;
+        max-width: 300px;
+        height: 220px;
+    }
+
+    /* 3. ضبط شبكة المنتجات لتصبح عمود واحد على الموبايل */
+    .products-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+        padding: 0 10px;
+    }
+    .products-section {
+        padding: 40px 15px;
+    }
+
+    /* 4. ضبط شبكة آراء العملاء */
+    .reviews-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0 10px;
+    }
+    .reviews-section {
+        padding: 40px 15px;
+    }
+
+    /* 5. ضبط سكشن التواصل */
+    .contact-container {
+        grid-template-columns: 1fr !important;
+        padding: 0 10px;
+        gap: 20px;
+    }
+    .contact-section {
+        padding: 40px 15px;
+    }
+}
