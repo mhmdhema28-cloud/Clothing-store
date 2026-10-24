@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محل ملابس - لقطة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="blue-theme">  
+    <div id="splashLoader" class="splash-screen">
+        <div class="splash-content">
+            <h1 class="splash-logo-text">لـقـطـة</h1>
+            <div class="splash-clothes-icon">
+                <i class="fa-solid fa-shirt"></i>
+                <div class="straight-pants" title="بنطلون">
+                    <div class="pants-waist"></div>
+                    <div class="pants-legs">
+                        <div class="pants-leg"></div>
+                        <div class="pants-leg"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="loader-bar-container">
+                <div class="loader-bar-fill"></div>
+            </div>
+            <span class="loader-status">جاري التجهيز...</span>
+        </div>
+    </div>
+    <header class="logo">
+        <div class="name">لـقـطـة</div>
+        <nav class="title">
+            <a href="#hero">الرئيسية</a>
+            <a href="#offers">العروض</a>
+            <a href="#products">المنتجات</a>
+            <a href="#reviews">آراء العملاء</a>
+            <a href="#faq">الأسئلة الشائعة</a>
+            <a href="#contact">تواصل معنا</a>
+        </nav>
+        <div class="header-left-section">
+            <span class="mini-ar">LOQTA STORE</span>
+            <button id="themeToggleBtn" title="تغيير ثيم النيون"><i class="fa-solid fa-bolt"></i></button>
+        </div>
+    </header>
+    <section id="hero" class="logo-title">
+        <div class="text-content">
+            <h1 class="km">خش علي لقطه واللقطه الي تعجبك</h1>
+            <p class="mk">كل قطعة لقطة واللقطية بتنزل مرة واحدة بس</p>
+            <h3 class="text-content-h3">تشكيله شتوي 2027 - خامات قطن 100% وتقفيل يليق بيك</h3>
+        </div>
+        <div class="left-logo-container">
+            <div class="image-showcase-frame">
+                <div class="glow-backdrop"></div>
+                <img src="lo.jpeg" alt="كولكشن لقطة" class="exact-hoodies-img">
+            </div>
+            <div class="hex-text">
+                <span class="ar-text">لـقـطـة</span>
+                <span class="en-text">LOQTA COLLECTION</span>
+            </div>
+        </div>
+    </section>
+    <section id="offers" class="offer-banner">
+        <div class="offer-content">
+            <span class="offer-badge">عرض لفترة محدودة 🔥</span>
+            <h2 class="offer-title">خصم 20% على جميع الهوديز الشتوي!</h2>
+            <p class="offer-desc">استخدم كود الخصم <strong class="promo-code">LOQTA20</strong> عند الطلب</p>
+            
+            <div class="countdown-container">
+                <div class="time-box"><span id="hours">08</span><small>ساعة</small></div>
+                <div class="time-colon">:</div>
+                <div class="time-box"><span id="minutes">45</span><small>دقيقة</small></div>
+                <div class="time-colon">:</div>
+                <div class="time-box"><span id="seconds">30</span><small>ثانية</small></div>
+            </div>
+        </div>
+    </section>
+    <section id="products" class="products-section">
+        <div class="section-tree-header">
+            <h2 class="main-tree-title">أحدث كولكشن لقطة الشتوي</h2>
+            <p class="sub-tree-title">إختر قطعتك قبل نفاذ الكمية</p>
+            <div class="tree-lines-container">
+                <div class="stem-line"></div>
+                <div class="branch-lines">
+                    <div class="branch branch-right"></div>
+                    <div class="branch branch-center"></div>
+                    <div class="branch branch-left"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- أزرار تصفية الأقسام -->
+        <div class="filter-tabs">
+            <button class="tab-btn active" data-category="all">الكل</button>
+            <button class="tab-btn" data-category="hoodie">هوديز</button>
+            <button class="tab-btn" data-category="sweatshirt">سويت شيرت</button>
+            <button class="tab-btn" data-category="pants">بنطلونات</button>
+        </div>
+
+        <!-- شبكة المنتجات (3 فوق هوديز/تيشيرتات، 3 في النص سويت شيرت، 3 تحت بنطلونات) -->
+        <div class="products-grid">
+            
+            <!-- الصف الأول: 3 هوديز / تيشيرتات فوق -->
+            <div class="product-card" data-category="hoodie">
+                <div class="product-img-box"><img src="a.jpeg" alt="هودي 1"></div>
+                <div class="product-info-box">
+                    <h3 class="product-name">هودي أوفرسايز ابيض</h3>
+                    <div class="product-price">650 ج.م</div>
+                    <button class="details-btn">عرض التفاصيل</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="hoodie">
+                <div class="product-img-box"><img src="b.jpeg" alt="هودي 2"></div>
+                <div class="product-info-box">
+                    <h3 class="product-name">هودي أوفرسايز أزرق</h3>
+                    <div class="product-price">650 ج.م</div>
+                    <button class="details-btn">عرض التفاصيل</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="hoodie">
+                <div class="product-img-box"><img src="u.jpeg" alt="هودي 3"></div>
+                <div class="product-info-box">
+                    <h3 class="product-name">هودي اوفر سايز رمادي</h3>
+                    <div class="product-price">650 ج.م</div>
+                    <button class="details-btn">عرض التفاصيل</button>
+                </div>
+            </div>
+
+            <!-- الصف الثاني: 3 في النص سويت شيرت -->
+            <div class="product-card" data-category="sweatshirt">
+                <div class="product-img-box"><img src="d.jpeg" alt="سويت شيرت 1"></div>
+                <div class="product-info-box">
+                    <h3 class="product-name">سويت شيرت زيتي</h3>
+                    <div class="product-price">550 ج.م</div>
+                    <button class="details-btn">عرض التفاصيل</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="sweatshirt">
+                <div class="product-img-box"><img src="r.jpeg" alt="سويت شيرت 2"></div>
+                <div class="product-info-box">
+                    <h3 class="product-name">بلوفر</h3>
+                    <div class="product-price">550 ج.م</div>
+                    <button class="details-btn">عرض التفاصيل</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="sweatshirt">
+                <div class="product-img-box"><img src="c.jpeg" alt="سويت شيرت 3"></div>
+                <div class="product-info-box">
+                    <h3 class="product-name">سويت شيرت بولو</h3>
+                    <div class="product-price">550 ج.م</div>
+                    <button class="details-btn">عرض التفاصيل</button>
+                </div>
+            </div>
+
+            <!-- الصف الثالث: 3 تحت بنطلونات -->
+            <div class="product-card" data-category="pants">
+                <div class="product-img-box"><img src="n.jpeg" alt="بنطلون 1"></div>
+                <div class="product-info-box">
+                    <h3 class="product-name">جينز باجي واسع</h3>
+                    <div class="product-price">450 ج.م</div>
+                    <button class="details-btn">عرض التفاصيل</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="pants">
+                <div class="product-img-box"><img src="o.jpeg" alt="بنطلون 2"></div>
+                <div class="product-info-box">
+                    <h3 class="product-name">جينز ياغي واسع</h3>
+                    <div class="product-price">1100 ج.م</div>
+                    <button class="details-btn">عرض التفاصيل</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="pants">
+                <div class="product-img-box"><img src="p.jpeg" alt="بنطلون 3"></div>
+                <div class="product-info-box">
+                    <h3 class="product-name">سويت بانتس قطن</h3>
+                    <div class="product-price">450 ج.م</div>
+                    <button class="details-btn">عرض التفاصيل</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== النافذة المنبثقة التفاصيل (Modal) ==================== -->
+    <div id="productModal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="close-modal-btn" id="closeModalBtn">&times;</button>
+            <div class="modal-body">
+                <div class="modal-img-container">
+                    <img id="modalImg" src="" alt="صورة المنتج">
+                </div>
+                <div class="modal-details">
+                    <h3 id="modalTitle">اسم المنتج</h3>
+                    <div class="modal-price-tag" id="modalPrice">0 ج.م</div>
+                    <p id="modalDesc">قماش قطني 100% ميلتون تقيل مع تقفيل ممتاز جداً ومريح للارتداء.</p>
+                    
+                    <div class="modal-actions-grid">
+                        <button class="action-btn add-cart-btn"><i class="fa-solid fa-cart-plus"></i> إضافة للسلة</button>
+                        <button class="action-btn buy-now-btn"><i class="fa-solid fa-bolt"></i> شراء الآن</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== سكشن آراء العملاء ==================== -->
+    <section id="reviews" class="reviews-section">
+        <div class="reviews-header">
+            <h2 class="main-tree-title">آراء عملاء "لقطة"</h2>
+            <p class="sub-tree-title">ثقتكم هي سر نجاحنا</p>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="reviewer-info">
+                    <div class="avatar">أ</div>
+                    <div>
+                        <h4 class="reviewer-name">أحمد عاطف</h4>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p class="review-text">"بجد الهودي خامة وتقفيل ممتاز، الطباعة متينة وما بتتأثرش بالغسيل خالص، تجربة شراء ممتازة."</p>
+            </div>
+            <div class="review-card">
+                <div class="reviewer-info">
+                    <div class="avatar">م</div>
+                    <div>
+                        <h4 class="reviewer-name">محمود حسن</h4>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p class="review-text">"التوصيل كان سريع جداً والخامة أثقل وأحلى من الصور بكثير! أكيد مش آخر تعامل معاكم."</p>
+            </div>
+            <div class="review-card">
+                <div class="reviewer-info">
+                    <div class="avatar">ك</div>
+                    <div>
+                        <h4 class="reviewer-name">كريم مصطفى</h4>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p class="review-text">"أحلى هودي طلبتو من عندكم وبجد المظهر مظبوط والتقفيل 100/100 والمقاس زي ما طلبته."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== سكشن الأسئلة الشائعة ==================== -->
+    <section id="faq" class="faq-section">
+        <div class="reviews-header">
+            <h2 class="main-tree-title">الأسئلة الشائعة</h2>
+            <p class="sub-tree-title">كل ما تريد معرفته عن الطلب والشحن</p>
+        </div>
+        <div class="faq-accordion">
+            <div class="faq-item">
+                <button class="faq-question"><span>❓ ما هي مدة الشحن والتوصيل؟</span><i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer"><p>يتم توصيل الطلبات خلال 24 إلى 48 ساعة كحد أقصى لجميع المحافظات.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question"><span>❓ هل يمكنني معاينة المنتج قبل الاستلام والدفع؟</span><i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer"><p>نعم، المعاينة متاحة مع المندوب قبل دفع أي مبلغ لضمان الجودة والمقاس.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question"><span>❓ ما هي سياسة الاستبدال والاسترجاع؟</span><i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer"><p>الاستبدال مجاني خلال 14 يوم من تاريخ الاستلام بشرط الحفاظ على القطعة بحالتها الأصلية.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== سكشن تواصل معنا والمكان ==================== -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="social-links-box">
+                <h3 class="info-title">تواصل معنا عبر منصاتنا</h3>
+                <div class="social-grid">
+                    <a href="https://wa.me/201080119834" target="_blank" class="social-btn whatsapp">
+                        <i class="fa-brands fa-whatsapp btn-icon"></i> واتساب (WhatsApp)
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-btn instagram">
+                        <i class="fa-brands fa-instagram btn-icon"></i> إنستجرام (Instagram)
+                    </a>
+                    <a href="https://tiktok.com" target="_blank" class="social-btn tiktok">
+                        <i class="fa-brands fa-tiktok btn-icon"></i> تيك توك (TikTok)
+                    </a>
+                    <a href="https://facebook.com" target="_blank" class="social-btn facebook">
+                        <i class="fa-brands fa-facebook-f btn-icon"></i> فيسبوك (Facebook)
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-info-box">
+                <h3 class="info-title">تفاصيل المحل والمواعيد</h3>
+                <div class="info-item">
+                    <i class="fa-regular fa-clock info-icon"></i>
+                    <div>
+                        <h4>مواعيد العمل:</h4>
+                        <p>يومياً من الساعة 12 ظهراً وحتى 11 مساءً</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-phone info-icon"></i>
+                    <div>
+                        <h4>رقم المحل للاستفسار والطلب:</h4>
+                        <p class="phone-number">01080119834</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot info-icon"></i>
+                    <div>
+                        <h4>عنوان الفرع:</h4>
+                        <p>شبرا / القاهرة - الشارع الرئيسي بجوار محطة المترو</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="store-footer">
+            جميع الحقوق محفوظة © LOQTA STORE 2027 - تصميم خاص وتطوير
+        </footer>
+    </section>
+
+    <!-- زرار واتساب العائم -->
+    <a href="https://wa.me/201000000000" target="_blank" class="floating-whatsapp" title="تواصل عبر الواتساب">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="main.js"></script>
+</body>
+</html>

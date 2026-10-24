@@ -1,0 +1,1023 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: #01060e;
+    --accent-color: #00f0ff;
+    --accent-glow: rgba(0, 240, 255, 0.7);
+}
+
+body.red-theme {
+    --bg-color: #050202;
+    --accent-color: #ff2a2a;
+    --accent-glow: rgba(255, 42, 42, 0.7);
+}
+
+body.blue-theme {
+    --bg-color: #01060e;
+    --accent-color: #00f0ff;
+    --accent-glow: rgba(0, 240, 255, 0.7);
+}
+
+/* ==================== خلفية الموقع والخطوط ==================== */
+body {
+    font-family: 'Cairo', sans-serif;
+    color: white;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    background-color: var(--bg-color);
+    transition: background-color 0.5s ease;
+    font-size: 20px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 45px 45px;
+    opacity: 0.4;
+    z-index: -2;
+    pointer-events: none;
+}
+
+body.red-theme::before {
+    background-image: 
+        linear-gradient(to right, rgba(255, 42, 42, 0.5) 1.5px, transparent 1.5px),
+        linear-gradient(to bottom, rgba(255, 42, 42, 0.5) 1.5px, transparent 1.5px);
+}
+
+body.blue-theme::before {
+    background-image: 
+        linear-gradient(to right, rgba(0, 240, 255, 0.5) 1.5px, transparent 1.5px),
+        linear-gradient(to bottom, rgba(0, 240, 255, 0.5) 1.5px, transparent 1.5px);
+}
+
+/* --- الهيدر --- */
+.logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: rgba(12, 12, 12, 0.92);
+    backdrop-filter: blur(10px);
+    color: white;
+    align-items: center;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    direction: rtl;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.name {
+    font-size: 35px;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.title {
+    display: flex;
+    gap: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.title a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.title a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 12px var(--accent-glow);
+}
+
+.header-left-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#themeToggleBtn {
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 12px var(--accent-glow);
+    transition: all 0.3s ease;
+}
+
+#themeToggleBtn:hover {
+    background: var(--accent-color);
+    color: #000;
+}
+
+.mini-ar {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--accent-color);
+}
+
+/* --- السكشن الرئيسي --- */
+.logo-title {
+    width: 100%;
+    padding-top: 140px;
+    padding-left: 60px;
+    padding-right: 80px;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    direction: rtl !important;
+    min-height: 90vh;
+}
+
+.text-content {
+    text-align: right;
+    max-width: 52%;
+    position: relative;
+    top: -30px;
+}
+
+.km {
+    font-size: 44px;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: #ffffff;
+    line-height: 1.3;
+}
+
+.mk {
+    font-size: 26px;
+    color: #dddddd;
+    margin-bottom: 22px;
+    font-weight: 700;
+}
+
+.text-content-h3 {
+    font-size: 27px;
+    color: var(--accent-color);
+    font-weight: 900;
+    text-shadow: 0 0 12px var(--accent-glow);
+    transition: color 0.4s ease;
+    line-height: 1.4;
+}
+
+.left-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.image-showcase-frame {
+    position: relative;
+    width: 440px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glow-backdrop {
+    position: absolute;
+    width: 330px;
+    height: 210px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    filter: blur(85px);
+    opacity: 0.55;
+    z-index: 1;
+    transition: background 0.5s ease;
+}
+
+/* حركة صورة اللوجو الرئيسية عند مرور الماوس (Hover) */
+.exact-hoodies-img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 16px;
+    border: 2px solid var(--accent-color);
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9), 0 0 15px var(--accent-glow);
+    cursor: pointer;
+    transition: all 0.35s ease;
+}
+
+.exact-hoodies-img:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.95), 0 0 25px var(--accent-glow);
+}
+
+.hex-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.ar-text {
+    font-size: 40px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 3px;
+}
+
+.en-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent-color);
+    letter-spacing: 4px;
+    margin-top: 4px;
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* ==================== سكشن الخصومات ==================== */
+.offer-banner {
+    max-width: 1100px;
+    margin: 40px auto 20px;
+    padding: 35px 25px;
+    background: rgba(18, 18, 18, 0.9);
+    border: 2px solid var(--accent-color);
+    border-radius: 22px;
+    box-shadow: 0 0 25px var(--accent-glow);
+    text-align: center;
+    direction: rtl;
+}
+
+.offer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.offer-badge {
+    background: var(--accent-color);
+    color: #000;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 900;
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.offer-title {
+    font-size: 36px;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.offer-desc {
+    font-size: 22px;
+    color: #dddddd;
+}
+
+.promo-code {
+    color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 10px;
+    border-radius: 6px;
+    border: 1px dashed var(--accent-color);
+}
+
+.countdown-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+    direction: ltr;
+}
+
+.time-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--accent-color);
+    padding: 10px 18px;
+    border-radius: 12px;
+    min-width: 70px;
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.time-box span {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--accent-color);
+}
+
+.time-box small {
+    font-size: 16px;
+    color: #aaaaaa;
+    font-weight: 700;
+}
+
+.time-colon {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--accent-color);
+}
+
+/* ==================== سكشن المنتجات ==================== */
+.products-section {
+    padding: 80px 80px 100px;
+    text-align: center;
+    direction: rtl;
+}
+
+.section-tree-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.main-tree-title {
+    font-size: 42px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.sub-tree-title {
+    font-size: 22px;
+    color: var(--accent-color);
+    text-shadow: 0 0 8px var(--accent-glow);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.tree-lines-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 900px;
+}
+
+.stem-line {
+    width: 3px;
+    height: 35px;
+    background: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.branch-lines {
+    position: relative;
+    width: 100%;
+    height: 25px;
+    border-top: 3px solid var(--accent-color);
+    box-shadow: 0 -2px 10px var(--accent-glow);
+}
+
+.branch {
+    position: absolute;
+    width: 3px;
+    height: 25px;
+    background: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.branch-right { right: 16%; }
+.branch-center { left: 50%; transform: translateX(-50%); }
+.branch-left { left: 16%; }
+
+/* أزرار الفلترة */
+.filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.tab-btn {
+    padding: 10px 24px;
+    background: rgba(18, 18, 18, 0.8);
+    border: 2px solid var(--accent-color);
+    color: #ffffff;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active, .tab-btn:hover {
+    background: var(--accent-color);
+    color: #000;
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: rgba(18, 18, 18, 0.85);
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card.hide {
+    display: none;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 15px var(--accent-glow);
+}
+
+.product-img-box {
+    width: 100%;
+    height: 230px;
+    background: #080808;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.product-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-img-box img {
+    transform: scale(1.06);
+}
+
+.product-info-box {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: rgba(10, 10, 10, 0.95);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.product-name {
+    font-size: 23px;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.product-price {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--accent-color);
+    text-shadow: 0 0 8px var(--accent-glow);
+}
+
+.details-btn {
+    margin-top: 5px;
+    padding: 10px 24px;
+    border: 2px solid var(--accent-color);
+    background: transparent;
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover .details-btn {
+    background: var(--accent-color);
+    color: #000;
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* ==================== النافذة المنبثقة (Modal) ==================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-card {
+    position: relative;
+    width: 90%;
+    max-width: 520px;
+    background: #121212;
+    border: 2px solid var(--accent-color);
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow: 0 0 30px var(--accent-glow);
+    direction: rtl;
+    transform: scale(0.85);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-card {
+    transform: scale(1);
+}
+
+.close-modal-btn {
+    position: absolute;
+    top: 15px;
+    left: 18px;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.close-modal-btn:hover { color: var(--accent-color); }
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+}
+
+.modal-img-container {
+    width: 200px;
+    height: 200px;
+    background: #000;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    padding: 8px;
+}
+
+.modal-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.modal-details h3 {
+    font-size: 28px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.modal-price-tag {
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--accent-color);
+    margin-bottom: 12px;
+}
+
+.modal-details p {
+    font-size: 19px;
+    color: #dddddd;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* أزرار العمليات المزدوجة بالنافذة */
+.modal-actions-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.action-btn {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 900;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.add-cart-btn {
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.add-cart-btn:hover {
+    background: var(--accent-color);
+    color: #000;
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.buy-now-btn {
+    background: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    color: #000;
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.buy-now-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* ==================== سكشن آراء العملاء ==================== */
+.reviews-section {
+    padding: 60px 80px 80px;
+    text-align: center;
+    direction: rtl;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.review-card {
+    background: rgba(18, 18, 18, 0.85);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    padding: 28px 22px;
+    text-align: right;
+    transition: all 0.35s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 15px var(--accent-glow);
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    background: var(--accent-color);
+    color: #000;
+    font-weight: 900;
+    font-size: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reviewer-name {
+    font-size: 23px;
+    font-weight: 900;
+}
+
+.review-text {
+    font-size: 19px;
+    color: #dddddd;
+    line-height: 1.8;
+}
+
+/* ==================== سكشن الأسئلة الشائعة ==================== */
+.faq-section {
+    padding: 40px 80px 80px;
+    direction: rtl;
+}
+
+.faq-accordion {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background: rgba(18, 18, 18, 0.85);
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px 25px;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--accent-color);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 150px;
+    padding: 18px 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.faq-answer p {
+    font-size: 18px;
+    color: #dddddd;
+}
+
+/* ==================== سكشن التواصل ==================== */
+.contact-section {
+    padding: 60px 80px 30px;
+    direction: rtl;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto 50px;
+}
+
+.contact-info-box, .social-links-box {
+    background: rgba(18, 18, 18, 0.85);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.info-title {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: rgba(0, 0, 0, 0.45);
+    padding: 15px 20px;
+    border-radius: 14px;
+}
+
+.info-icon { font-size: 28px; }
+
+.info-item h4 { font-size: 20px; }
+
+.info-item p, .phone-number { font-size: 18px !important; }
+
+.social-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 15px 24px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid rgba(255, 255, 255, 0.12);
+    transition: all 0.3s ease;
+}
+
+.social-btn.whatsapp { border-color: #25D366; color: #25D366; }
+.social-btn.whatsapp:hover { background: #25D366; color: #000; }
+
+.social-btn.instagram { border-color: #e1306c; color: #e1306c; }
+.social-btn.instagram:hover { background: #e1306c; color: #fff; }
+
+.social-btn.tiktok { border-color: #00f2fe; color: #ffffff; }
+.social-btn.tiktok:hover { background: #000; color: #00f2fe; }
+
+.social-btn.facebook { border-color: #1877F2; color: #1877F2; }
+.social-btn.facebook:hover { background: #1877F2; color: #fff; }
+
+.store-footer {
+    text-align: center;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 18px;
+    color: #aaaaaa;
+}
+
+/* حركة زرار الواتساب العائم عند مرور الماوس (Hover) */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+    z-index: 999;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 25px rgba(37, 211, 102, 0.9);
+}
+
+/* ==================== الدخلة (Splash Screen) ==================== */
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #050202;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    direction: rtl;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.splash-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.splash-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+}
+
+.splash-logo-text {
+    font-size: 75px;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 0 0 25px var(--accent-glow);
+    animation: dropFromTop 1s cubic-bezier(0.175, 0.885, 0.32, 1.27) forwards;
+}
+
+.splash-clothes-icon {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-size: 58px;
+    color: var(--accent-color);
+    filter: drop-shadow(0 0 18px var(--accent-glow));
+    animation: riseFromBottom 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.27) forwards;
+}
+
+.straight-pants {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 36px;
+    height: 52px;
+}
+
+.pants-waist {
+    width: 36px;
+    height: 9px;
+    background-color: var(--accent-color);
+    border-radius: 3px 3px 0 0;
+}
+
+.pants-legs {
+    display: flex;
+    justify-content: space-between;
+    width: 36px;
+    height: 43px;
+    margin-top: 2px;
+}
+
+.pants-leg {
+    width: 16px;
+    height: 100%;
+    background-color: var(--accent-color);
+    border-radius: 0 0 2px 2px;
+}
+
+.loader-bar-container {
+    width: 280px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 15px;
+}
+
+.loader-bar-fill {
+    width: 0%;
+    height: 100%;
+    background: var(--accent-color);
+    animation: fillProgress 2.5s ease-in-out forwards;
+}
+
+.loader-status { font-size: 18px; color: #aaaaaa; }
+
+@keyframes dropFromTop {
+    0% { transform: translateY(-200px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes riseFromBottom {
+    0% { transform: translateY(200px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fillProgress {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
